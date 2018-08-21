@@ -1,6 +1,6 @@
 # neochain
-Network Evolution Observation in Blockchain
+Network Evolution Observation for Blockchain
 
 
-## Gettin Started
+## Getting Started
 python setup.py install
