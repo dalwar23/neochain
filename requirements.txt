@@ -14,9 +14,6 @@ python-louvain >= 0.11
 setuptools >= 40.1.0
 six >= 1.11.0
 wheel >= 0.31.1
-
-
-# Requirements needed for virtual environment
 python-dateutil >= 2.7.3
 pytz >= 2018.5
 wsgiref >= 0.1.2
