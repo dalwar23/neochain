@@ -1,0 +1,31 @@
+# Requirements for neochain
+# Network Evolution Observation for Blockchain
+
+
+pip >= 18.0
+argparse >= 1.2.1
+numpy == 1.14.5
+pandas >= 0.23.4
+networkx >= 2.1
+matplotlib >= 2.2.2
+pyrainbowterm >= 1.0
+subprocess32 >= 3.5.2
+python-louvain >= 0.11
+setuptools >= 40.1.0
+six >= 1.11.0
+wheel >= 0.31.1
+
+
+# Requirements needed for virtual environment
+python-dateutil >= 2.7.3
+pytz >= 2018.5
+wsgiref >= 0.1.2
+
+
+# Testing requirements
+nose
+nose-cover3
+
+
+# Memory profiling
+memory-profiler >= 0.52.0
