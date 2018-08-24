@@ -15,7 +15,7 @@ venv/
 
 # Setuptools distribution folder #
 ##################################
-/dist/
+dist/
 
 # Python egg metadata, regenerated from source files by setuptools #
 ####################################################################
@@ -70,3 +70,8 @@ nbproject
 .idea
 .project
 .settings
+
+# Documentation folders #
+#########################
+doc/_template/
+doc/_build/
