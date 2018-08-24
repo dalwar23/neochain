@@ -23,6 +23,31 @@ __author__ = 'Dalwar Hossain'
 __email__ = 'dalwar.hossain@protonmail.com'
 
 
+# Check input file permissions
+def check_input_file_permissions(input_file):
+    """
+    This function check permissions for the input file
+    :param input_file: Input file path
+    :return: input file, status of the file (OK/NOT OK) for reading
+    """
+    # Check input file's status (is a file?, has right permissions?)
+    print('Checking input file status.....', log_type='info')
+    if os.access(input_file, os.F_OK):
+        print('Input file found!', log_type='info')
+        if os.access(input_file, os.R_OK):
+            print('Input file has read permission!', log_type='info')
+            permission_status = 1
+        else:
+            print('Input file does not has read permission!', log_type='error')
+            permission_status = 0
+    else:
+        print('Input file not found!', log_type='error')
+        permission_status = 0
+
+    # Return
+    return permission_status
+
+
 # Check if the file has header or not
 def file_sniffer(input_file=None):
     """
@@ -176,7 +201,7 @@ def is_weighted(weighted=None):
     elif weighted == "no" or weighted == "No" or weighted == "N" or weighted == "n":
         data_ = False
     else:
-        print('Please provide weighted (-w) argument with yes/no, y/n, Yes/No', log_type='error')
+        print('Please provide weighted argument with yes/no, y/n, Yes/No', log_type='error')
         sys.exit(1)
 
     # Return
@@ -184,18 +209,29 @@ def is_weighted(weighted=None):
 
 
 # Generate appropriate sanity check status code
-def generate_sanity_status(header_status=None, delimiter_status=None, column_status=None):
+def generate_sanity_status(input_file_status=None, header_status=None, delimiter_status=None, column_status=None):
     """
     This function creates sanity check status codes
+    :param input_file_status:
     :param header_status:
     :param delimiter_status:
     :param column_status:
-    :return: status
+    :return: (int) status_code
     """
     status_code = 1
     print('Sanity check.....', log_type='info', end='')
     print('COMPLETE', color='green')
     print('--------------- Summary -------------------')
+
+    # Input file
+    if input_file_status:
+        print('Input file.....', log_type='info', end='')
+        if input_file_status == 1:
+            print('OK', color='green')
+            status_code = status_code and 1
+        elif input_file_status == 0:
+            print('NOT OK', color='red')
+            status_code = status_code and 0
 
     # Header
     print('Headers.....', log_type='info', end='')
@@ -244,6 +280,9 @@ def sanity_check(input_file=None, delimiter=None, weighted=None):
     # Get file information (Header, delimiter, number of columns etc.)
     detected_delimiter, headers, n_cols, skip_n_rows = file_sniffer(input_file)
 
+    # Input file?
+    input_file_status = check_input_file_permissions(input_file)
+
     # Header?
     header_status = check_file_header(headers)
 
@@ -254,7 +293,7 @@ def sanity_check(input_file=None, delimiter=None, weighted=None):
     column_status = check_columns(n_cols, weighted)
 
     # Generate sanity status
-    sanity_status = generate_sanity_status(header_status, delimiter_status, column_status)
+    sanity_status = generate_sanity_status(input_file_status, header_status, delimiter_status, column_status)
 
     # Return
     return sanity_status
