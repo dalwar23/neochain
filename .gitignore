@@ -73,6 +73,6 @@ nbproject
 
 # Documentation folders #
 #########################
-doc/_template/*
-doc/_build/*
-doc/_static/*
+docs/_template/
+docs/_build/
+docs/_static/
