@@ -19,7 +19,7 @@ __email__ = 'dalwar.hossain@protonmail.com'
 
 # Handle imports
 from nc_community_handler import find_communities, find_top_n_communities
-from nc_graph_handler import generate_merged_graph
+from nc_graph_handler import find_sub_graph, generate_merged_graph
 
 
 # Version
