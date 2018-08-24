@@ -43,7 +43,7 @@ if __name__ == "__main__":
         maintainer_email='dalwar.hossain@protonmail.com',
         author='Dalwar Hossain',
         author_email='dalwar.hossain@protonmail.com',
-        description='neochain - Network Evolution Observation for Blockchain',
+        description='NEOChain - Network Evolution Observation for Blockchain',
         keywords=['Network', 'Evolution', 'Community', 'Blockchain'],
         long_description=readme(),
         license='MIT',
