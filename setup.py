@@ -78,6 +78,7 @@ if __name__ == "__main__":
                           'wheel>=0.31.1',
                           'python-dateutil>=2.7.3',
                           'pytz>=2018.5',
+                          ],
         test_suite='nose.collector',
         tests_require=['nose>=1.3.7', 'nose-cover3>=0.1.0'],
         zip_safe=False
