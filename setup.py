@@ -80,6 +80,7 @@ if __name__ == "__main__":
                           'pytz>=2018.5',
                           'sphinx>=1.7.1',
                           'recommonmark >=0.4.0',
+                          'sphinx_rtd_theme>=0.4.1',
                           ],
         test_suite='nose.collector',
         tests_require=['nose>=1.3.7', 'nose-cover3>=0.1.0'],
