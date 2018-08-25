@@ -3,6 +3,7 @@
 Network Evolution Observation for Blockchain
 
 [![License: MIT](https://img.shields.io/badge/License-MIT-blue.svg)](https://opensource.org/licenses/MIT)
+[![Build Status](https://travis-ci.org/dharif23/neochain.svg?branch=master)](https://travis-ci.org/dharif23/neochain)
 [![Documentation Status](https://readthedocs.org/projects/neochain/badge/?version=latest)](https://neochain.readthedocs.io/en/latest/?badge=latest)
 
 
