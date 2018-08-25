@@ -81,5 +81,5 @@ if __name__ == "__main__":
                           ],
         test_suite='nose.collector',
         tests_require=['nose>=1.3.7', 'nose-cover3>=0.1.0'],
-        zip_safe=False
+        zip_safe=False,
     )
