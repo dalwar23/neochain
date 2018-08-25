@@ -79,7 +79,6 @@ if __name__ == "__main__":
                           'wheel>=0.31.1',
                           'python-dateutil>=2.7.3',
                           'pytz>=2018.5',
-                          'wsgiref >= 0.1.2',
                           'memory-profiler>=0.52.0'],
         test_suite='nose.collector',
         tests_require=['nose>=1.3.7', 'nose-cover3>=0.1.0'],
