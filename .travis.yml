@@ -4,14 +4,13 @@ python:
   - "3.4"
   - "3.5"
   - "3.6"
-  - "3.7-dev"
 # Install dependencies
 install:
   - python setup.py install
 
 # Script to run
 script:
-  - echo "OKAY"
+  - echo "passed"
 
 # Github Branch
 branches:
