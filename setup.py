@@ -75,7 +75,7 @@ if __name__ == "__main__":
                           'matplotlib>=2.2.2',
                           'pyrainbowterm>=1.0',
                           'setuptools>=40.1.0',
-                          'six>=1.11.0',
+                          'six>=1.10.0',
                           'wheel>=0.31.1',
                           'python-dateutil>=2.7.3',
                           'pytz>=2018.5',
