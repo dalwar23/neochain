@@ -10,7 +10,8 @@ from pyrainbowterm import *
 import heapq
 
 # Import custom libraries
-from infomap import infomap
+# from infomap import infomap
+import infomap
 import networkx as nx
 import community
 import pandas as pd
