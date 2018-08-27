@@ -244,8 +244,7 @@ def find_relative_overlap(communities_t=None, communities_t1=None, similarity_me
 
     :param communities_t: (python dict) Top 'n' communities at time 't'
     :param communities_t1: (python dict) Top 'n' communities at time 't+1'
-    :param similarity_measure: Similarity measure to use. Available measures: \
-    [EUCLIDEAN DISTANCE , MANHATTAN DISTANCE, MINKOWSKI DISTANCE, COSINE SIMILARITY, JACCARD SIMILARITY]\
+    :param similarity_measure: Similarity measure to use.
     :return: (python list) list of similar pairs of community id with similarity
     """
     # Get a dictionary of communities at time 't'

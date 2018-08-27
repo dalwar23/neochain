@@ -91,7 +91,6 @@
 <li class="toctree-l3"><a class="reference internal" href="#submodules">Submodules</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-neochain.nc_community_handler">neochain.nc_community_handler module</a></li>
 <li class="toctree-l3"><a class="reference internal" href="#module-neochain.nc_graph_handler">neochain.nc_graph_handler module</a></li>
-<li class="toctree-l3"><a class="reference internal" href="#module-neochain">Module contents</a></li>
 </ul>
 </li>
 </ul>
@@ -201,11 +200,14 @@
 <col class="field-name" />
 <col class="field-body" />
 <tbody valign="top">
-<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first last simple">
+<tr class="field-odd field"><th class="field-name">Parameters:</th><td class="field-body"><ul class="first simple">
 <li><strong>communities_t</strong> – (python dict) Top ‘n’ communities at time ‘t’</li>
 <li><strong>communities_t1</strong> – (python dict) Top ‘n’ communities at time ‘t+1’</li>
-<li><strong>similarity_measure</strong> – Similarity measure to use. Available measures:     [EUCLIDEAN DISTANCE , MANHATTAN DISTANCE, MINKOWSKI DISTANCE, COSINE SIMILARITY, JACCARD SIMILARITY]    :return: (python list) list of similar pairs of community id with similarity</li>
+<li><strong>similarity_measure</strong> – Similarity measure to use.</li>
 </ul>
+</td>
+</tr>
+<tr class="field-even field"><th class="field-name">Returns:</th><td class="field-body"><p class="first last">(python list) list of similar pairs of community id with similarity</p>
 </td>
 </tr>
 </tbody>
@@ -283,15 +285,6 @@
 </table>
 </dd></dl>
 
-</div>
-<div class="section" id="module-neochain">
-<span id="module-contents"></span><h2>Module contents<a class="headerlink" href="#module-neochain" title="Permalink to this headline">¶</a></h2>
-<p>This package detects communities in blockchain transaction data
-by using well known community detection algorithms and also can observe
-evolution in blockchain network by observing changes in communities in
-blockchain</p>
-<p>To install: python setup.py install
-To use: import neochain as nc</p>
 </div>
 </div>
 
