@@ -22,6 +22,7 @@ __email__ = 'dalwar.hossain@protonmail.com'
 def __read_data(input_file=None, weighted=None, delimiter=None):
     """
     This function uses pandas read_csv to read data and return pandas data frame
+
     :param input_file: (string) A path to input file that is being read
     :param weighted: (boolean) yes/no, if the input file has weight column or not
     :param delimiter: (string) Columns separator in the input file
@@ -56,15 +57,15 @@ def __read_data(input_file=None, weighted=None, delimiter=None):
 # Create a function for sub-graph
 def find_sub_graph(input_file=None, weighted=None, delimiter=None, top_n_communities_t=None):
     """
-    This function creates a subset of links/edges from the main input file depending on the nodes from
-    top 'n' communities
-    :param input_file (string) A file path to input data at time 't'
-    :param delimiter: (string) Column separator in both input files, default [whitespace] [MUST BE SAME FOR BOTH FILE]
-    :param weighted: (boolean) yes/no, if files have weight column or not [NUMBER OF COLUMN MUST BE SAME IN BOTH FILES]
+    This function creates a subset of links/edges from the input file depending on the nodes from top 'n' communities
+
+    :param input_file: (string) A file path to input data at time 't'
+    :param delimiter: (string) Column separator in both input files, default [whitespace]
+    :param weighted: (boolean) yes/no, if files have weight column or not
     :param top_n_communities_t: (list) List of communities containing the member nodes
-    :return: (pandas data frame) a data frame of edges that contains all the nodes from top 'n' communities that
-    are present in input file
+    :return: (pandas data frame) a data frame of edges that contains all the nodes from top 'n' communities
     """
+
     # Read data set from time 't'
     graph_df_t = __read_data(input_file=input_file, weighted=weighted, delimiter=delimiter)
     print('Time (t) graph size: {}'.format(len(graph_df_t.index)), log_type='info')
@@ -89,11 +90,12 @@ def find_sub_graph(input_file=None, weighted=None, delimiter=None, top_n_communi
 def generate_merged_graph(input_dataset_t=None, input_dataset_t1=None, delimiter=None, weighted=None,
                           top_n_communities=None):
     """
+    This function creates a merged graph data from sub-graph at time 't' and a graph snapshot from time 't+1"
 
     :param input_dataset_t: (string) A file path to input data at time 't'
     :param input_dataset_t1: (string) A file path to input data at time 't+1'
-    :param delimiter: (string) Column separator in both input files, default [whitespace] [MUST BE SAME FOR BOTH FILE]
-    :param weighted: (boolean) yes/no, if files have weight column or not [NUMBER OF COLUMN MUST BE SAME IN BOTH FILES]
+    :param delimiter: (string) Column separator in both input files, default [whitespace]
+    :param weighted: (boolean) yes/no, if files have weight column or not
     :param top_n_communities: (list) List of communities containing the member nodes
     :return: (pandas data frame) A data frame with links form sub graph at time 't' and links from graph at time 't+1'
     """
