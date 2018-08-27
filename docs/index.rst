@@ -3,8 +3,8 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to neochain's documentation!
-====================================
+Welcome
+========
 
 .. toctree::
    :maxdepth: 2
@@ -13,8 +13,9 @@ Welcome to neochain's documentation!
    overview
    install
    tutorial
-   bibliography
    examples
+   modules
+   bibliography
 
 
 Indices and tables
@@ -22,4 +23,5 @@ Indices and tables
 
 * :ref:`genindex`
 * :ref:`modindex`
-* :ref:`search`
+
+.. * :ref:`search`
