@@ -24,9 +24,12 @@ copyright = u'2018, Dalwar Hossain'
 author = u'Dalwar Hossain'
 
 # The short X.Y version
-version = u'1.0'
+release_info = {}
+with open('../neochain/_release_info.py', 'rb') as rf:
+    exec(rf.read(), release_info)
+version = release_info['__version__']
 # The full version, including alpha/beta/rc tags
-release = u'1.0'
+release = release_info['__release__']
 
 
 # -- General configuration ---------------------------------------------------
@@ -40,13 +43,11 @@ release = u'1.0'
 # ones.
 extensions = [
     'sphinx.ext.autodoc',
-    'sphinx.ext.viewcode',
     'sphinx.ext.napoleon',
     'sphinx.ext.mathjax',
     'sphinx.ext.autosummary',
     'sphinx.ext.intersphinx',
 ]
-
 # Add any paths that contain templates here, relative to this directory.
 templates_path = ['_templates']
 
@@ -76,8 +77,10 @@ language = None
 # List of patterns, relative to source directory, that match files and
 # directories to ignore when looking for source files.
 # This pattern also affects html_static_path and html_extra_path .
-exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store']
-
+exclude_patterns = [u'_build', 'Thumbs.db', '.DS_Store', '**infomap**', '**setup**']
+add_module_names = False
+add_function_parentheses = True
+autodoc_member_order = 'groupwise'
 # The name of the Pygments (syntax highlighting) style to use.
 pygments_style = 'sphinx'
 
@@ -110,7 +113,7 @@ html_theme_options = {
     'includehidden': True,
     'titles_only': False
 }
-
+html_show_sourcelink = False
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
