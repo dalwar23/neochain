@@ -70,9 +70,3 @@ nbproject
 .idea
 .project
 .settings
-
-# Documentation folders #
-#########################
-docs/_template/
-docs/_build/
-docs/_static/
