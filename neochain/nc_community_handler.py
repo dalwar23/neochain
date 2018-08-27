@@ -191,7 +191,7 @@ def find_top_n_communities(all_communities=None, n=None):
 
     :param all_communities: (dict) A python dictionary of nodes and communities
     :param n: (int) number of top community to be selected
-    :return: (list) of top 'n' communities ([[list of member nodes]])
+    :return: (dict) of top 'n' communities
     """
     # Create a Pandas data frame from dict to run group by
     communities_df = pd.DataFrame(all_communities.items(), columns=['node', 'cluster'], dtype=int)
@@ -202,19 +202,78 @@ def find_top_n_communities(all_communities=None, n=None):
     # Find top (e.g. n=10) communities based on number of nodes in the community
     # heapq.nlargest(n, iterable, [key]) is equivalent to
     # sorted(flat_comm_list, key=len, reverse=True)[:10]
-    top_n_communities = heapq.nlargest(n, node_groups, key=len)
+    top_n_communities_ls = heapq.nlargest(n, node_groups, key=len)
+
+    # Convert list of lists into dictionary
+    top_n_communities_dict = _operations.__get_dict(top_n_communities_ls)
 
     # Return
-    return top_n_communities
+    return top_n_communities_dict
+
+
+# Find similarity between two sets
+def __find_similarity(set_a=None, set_b=None, similarity_measure=None):
+    """
+    This function calculates the similarity between two lists
+
+    :param set_a: (python list) First python list for similarity measurements
+    :param set_b: (python list) Second python list for similarity measurements
+    :param similarity_measure: What similarity measure to use
+    :return: (float) A float number between 0 and 1
+    """
+    # Find similarity
+    if similarity_measure is None or similarity_measure == 'jaccard':
+        similarity = _operations.__jaccard_similarity(set_a=set_a, set_b=set_b)
+    elif similarity_measure == 'euclidean':
+        similarity = _operations.__euclidean_distance_similarity(set_a=set_a, set_b=set_b)
+    elif similarity_measure == 'manhattan':
+        similarity = _operations.__manhattan_distance_similarity(set_a=set_a, set_b=set_b)
+    elif similarity_measure == 'minkowski':
+        similarity = _operations.__minkowski_distance_similarity(set_a=set_a, set_b=set_b)
+    elif similarity_measure == 'cosine':
+        similarity = _operations.__cosine_similarity(set_a=set_a, set_b=set_b)
+
+    # Return
+    return similarity
 
 
 # Find similarity between communities
-def find_relative_overlap(communities_t=None, communities_t1=None):
+def find_relative_overlap(communities_t=None, communities_t1=None, similarity_measure=None):
     """
     This function calculates relative overlap of communities
 
-    :param communities_t: (python list) Top 'n' communities at time 't'
-    :param communities_t1: (python list) Top 'n' communities at time 't+1'
-    :return: (python list) list of pairs of communities
+    :param communities_t: (python dict) Top 'n' communities at time 't'
+    :param communities_t1: (python dict) Top 'n' communities at time 't+1'
+    :param similarity_measure: Similarity measure to use. Available measures: \
+    [EUCLIDEAN DISTANCE , MANHATTAN DISTANCE, MINKOWSKI DISTANCE, COSINE SIMILARITY, JACCARD SIMILARITY]\
+    :return: (python list) list of similar pairs of community id with similarity
     """
-    pass
+    # Get a dictionary of communities at time 't'
+    # communities_t_dict = _operations.__get_dict(data=communities_t)
+
+    # Get a dictionary of communities at time 't+1'
+    # communities_t1_dict = _operations.__get_dict(data=communities_t1)
+
+    # Find the most overlapping pairs
+    comm_id_t = []
+    comm_id_t1 = []
+    comm_similarity = []
+    for key_t, value_t in communities_t.items():
+        max_similarity = 0.0
+        for key_t1, value_t1 in communities_t1.items():
+            similarity = __find_similarity(set_a=value_t, set_b=value_t1, similarity_measure=similarity_measure)
+            if similarity > max_similarity:
+                max_similarity = similarity
+                id_t = key_t
+                id_t1 = key_t1
+                # print('{}:{}-{}'.format(key_t, key_t1, similarity))
+            else:
+                pass
+        # Append the community id to list
+        comm_id_t.append(id_t)
+        comm_id_t1.append(id_t1)
+        comm_similarity.append(max_similarity)
+    # Append all the list into one
+    similarity_matrix = list(zip(comm_id_t, comm_id_t1, comm_similarity))
+    print(similarity_matrix)
+
