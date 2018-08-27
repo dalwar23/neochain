@@ -8,6 +8,8 @@ import os
 import sys
 import datetime
 from itertools import islice
+from math import *
+from decimal import Decimal
 
 # Import custom python libraries
 try:
@@ -443,3 +445,136 @@ def create_community_file(dict_communities=None, output_file=None):
     except Exception as e:
         print('Can not create output file! ERROR: {}'.format(e), log_type='error')
         sys.exit(1)
+
+
+# Get python dictionay
+def __get_dict(data=None):
+    """
+    This function creates python dictionary from an iterator
+
+    :param data: An iterator
+    :return: (python dict) A python dictionary
+    """
+    # Create dictionary and use integer values as keys
+    _dict = {}
+    _id = 1
+    for item in data:
+        _dict[_id] = item
+        _id += 1
+
+    # Return
+    return _dict
+
+
+# Find jaccard similarity
+def __jaccard_similarity(set_a=None, set_b=None):
+    """
+    This function calculates jaccard similarity
+
+    :param set_a: (list) Python list of items
+    :param set_b: (list) Python list of second items
+    :return: (float) jaccard similarity between set_a and set_b
+    """
+    # Assign
+    x = set_a
+    y = set_b
+    # Calculate
+    intersection_cardinality = len(set.intersection(*[set(x), set(y)]))
+    union_cardinality = len(set.union(*[set(x), set(y)]))
+
+    # Return
+    return intersection_cardinality / float(union_cardinality)
+
+
+# Find cosine similarity
+def __cosine_similarity(set_a=None, set_b=None):
+    """
+    This function calculates cosine similarity
+
+    :param set_a: (list) Python list of items
+    :param set_b: (list) Python list of second items
+    :return: (float) cosine similarity between set_a and set_b
+    """
+    # Find square root
+    def square_rooted(value):
+        """
+        This function finds the square root of a value
+        :param value: (int) An integer
+        :return: (float) square root of 'value'
+        """
+        return round(sqrt(sum([a * a for a in value])), 6)  # Rounded upto 6 decimal point
+
+    # Assign
+    x = set_a
+    y = set_b
+    # Calculate
+    numerator = sum(a * b for a, b in zip(x, y))
+    denominator = square_rooted(x) * square_rooted(y)
+
+    # Return
+    return round(numerator / float(denominator), 6)  # Rounded upto 6 decimal point
+
+
+# Find euclidean distance similarity
+def __euclidean_distance_similarity(set_a=None, set_b=None):
+    """
+    This function calculates euclidean distance similarity
+
+    :param set_a: (list) Python list of items
+    :param set_b: (list) Python list of second items
+    :return: (float) euclidean distance similarity between set_a and set_b
+    """
+    # Assign
+    x = set_a
+    y = set_b
+
+    # Calculate &
+    # Return
+    return sqrt(sum(pow(a - b, 2) for a, b in zip(x, y)))
+
+
+# Find manhattan distance similarity
+def __manhattan_distance_similarity(set_a=None, set_b=None):
+    """
+    This function measures manhattan distance similarity
+
+    :param set_a: (list) Python list of items
+    :param set_b: (list) Python list of second items
+    :return: (int / float) manhattan distance similarity between set_a and set_b
+    """
+    # Assign
+    x = set_a
+    y = set_b
+
+    # Calculate &
+    # Return
+    return sum(abs(a - b) for a, b in zip(x, y))
+
+
+# Find minkowski distance similarity
+def __minkowski_distance_similarity(set_a=None, set_b=None):
+    """
+    This function calculates minkowski distance similarity
+
+    :param set_a: (list) Python list of items
+    :param set_b: (list) Python list of second items
+    :return: (int / float) minkowski distance similarity between set_a and set_b
+    """
+    # Assign
+    x = set_a
+    y = set_b
+    p_value = 3
+
+    # Calculate
+    def nth_root(value, n_root):
+        """
+        This function calculates the nth_root
+        :param value: (int) the number of which nth root to be taken of
+        :param n_root: (int) number of degree that root is being taken [default: 3]
+        :return: (float) nth_root
+        """
+        root_value = 1 / float(n_root)
+        return round(Decimal(value) ** Decimal(root_value), 6)  # Rounded up to 6 decimal point
+
+    # Return
+    return nth_root(sum(pow(abs(a - b), p_value) for a, b in zip(x, y)), p_value)
