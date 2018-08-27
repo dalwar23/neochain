@@ -273,7 +273,9 @@ def find_relative_overlap(communities_t=None, communities_t1=None, similarity_me
         comm_id_t.append(id_t)
         comm_id_t1.append(id_t1)
         comm_similarity.append(max_similarity)
-    # Append all the list into one
-    similarity_matrix = list(zip(comm_id_t, comm_id_t1, comm_similarity))
-    print(similarity_matrix)
 
+    # Append all the list into one
+    similar_communities = list(zip(comm_id_t, comm_id_t1, comm_similarity))
+
+    # Return
+    return similar_communities
