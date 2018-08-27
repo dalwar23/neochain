@@ -14,7 +14,7 @@ python setup.py install
 
 # Description
 Network Evolution Observation for Blockchain (neochain). Network evolution observation through community detection in
-blockchain transaction data.
+blockchain transaction data. To know more, please refer to documentation.
 
 # Documentation
 [http://neochain.readthedocs.io/](http://neochain.readthedocs.io/)
