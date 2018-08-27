@@ -12,6 +12,7 @@ __author__ = 'Dalwar Hossain'
 __email__ = 'dalwar.hossain@protonmail.com'
 
 # Import python libraries
+import os
 import sys
 from setuptools import setup
 
@@ -28,6 +29,14 @@ if sys.version_info[:2] < (2, 7):
     sys.exit(-1)
 
 
+# Get version and release for this package
+package_name = 'neochain'
+release_file = os.path.join(package_name, '_release_info.py')
+release_info = {}
+with open(release_file, 'rb') as rf:
+    exec(rf.read(), release_info)
+
+
 # Read the README.md file for long description
 def readme():
     with open('README.md') as f:
@@ -37,12 +46,12 @@ def readme():
 # Standard boilerplate to run this script
 if __name__ == "__main__":
     setup(
-        name='neochain',
-        version='1.0',
+        name=package_name,
+        version=release_info['__version__'],
         maintainer='Dalwar Hossain',
         maintainer_email='dalwar.hossain@protonmail.com',
-        author='Dalwar Hossain',
-        author_email='dalwar.hossain@protonmail.com',
+        author=release_info['__author__'],
+        author_email=release_info['__email__'],
         description='neochain - Network Evolution Observation for Blockchain',
         keywords=['Network', 'Evolution', 'Community', 'Blockchain'],
         long_description=readme(),
