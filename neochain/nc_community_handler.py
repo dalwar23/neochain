@@ -29,6 +29,7 @@ __email__ = 'dalwar.hossain@protonmail.com'
 def __compose_ntx_graph(input_file=None, delimiter=None, weighted=None):
     """
     This function creates a networkx graph from provided file
+
     :param input_file: Input file path
     :param delimiter: separator for the column of the input file
     :param weighted: Simple yes/no if the input file is weighted or not
@@ -60,6 +61,7 @@ def __compose_ntx_graph(input_file=None, delimiter=None, weighted=None):
 def __run_louvain(ntx_graph=None):
     """
     This function runs louvain method algorithm
+
     :param ntx_graph: (Graph) A networkx graph
     :return: (dict) Python dictionary of nodes and communities
     """
@@ -83,6 +85,7 @@ def __run_louvain(ntx_graph=None):
 def __run_infomap(input_file=None, options=None):
     """
     This function runs infomap algorithm
+
     :param input_file: (string) input file path, default [.txt]
     :return: (dict) python dictionary of nodes and communities
     """
@@ -115,6 +118,7 @@ def __run_infomap(input_file=None, options=None):
 def find_communities(input_file=None, delimiter=None, weighted=None, algorithm=None, **kwargs):
     """
     This function finds community structure using defined algorithm
+
     :param input_file: (string) Input dataset for community detection, default [.txt]
     :param delimiter: (string) Column separator for input file, default [whitespace]
     :param weighted: (boolean) yes/no. Is the input file has a weight column?, default [no]
@@ -184,6 +188,7 @@ def find_communities(input_file=None, delimiter=None, weighted=None, algorithm=N
 def find_top_n_communities(all_communities=None, n=None):
     """
     This function finds the top 'n' communities from a python dictionary of nodes and communities
+
     :param all_communities: (dict) A python dictionary of nodes and communities
     :param n: (int) number of top community to be selected
     :return: (list) of top 'n' communities ([[list of member nodes]])
@@ -201,3 +206,15 @@ def find_top_n_communities(all_communities=None, n=None):
 
     # Return
     return top_n_communities
+
+
+# Find similarity between communities
+def find_relative_overlap(communities_t=None, communities_t1=None):
+    """
+    This function calculates relative overlap of communities
+
+    :param communities_t: (python list) Top 'n' communities at time 't'
+    :param communities_t1: (python list) Top 'n' communities at time 't+1'
+    :return: (python list) list of pairs of communities
+    """
+    pass
