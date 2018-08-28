@@ -17,7 +17,7 @@ import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
 # -- Import project ----------------------------------------------------------
-import neochain as nc
+from neochain import __version__, __release__, __author__, __email__
 
 # -- Project information -----------------------------------------------------
 
