@@ -8,5 +8,5 @@ __email__ = 'dalwar.hossain@protonmail.com'
 
 
 # Version
-__version__ = '1.0'
-__release__ = '1.0b1'
+__version__ = '1.1'
+__release__ = '1.1'
