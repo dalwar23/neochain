@@ -10,14 +10,16 @@ from pyrainbowterm import *
 import heapq
 
 # Import custom libraries
-# from infomap import infomap
-import infomap
 import networkx as nx
 import community
 import pandas as pd
 
 # Import custom libraries
 import _operations
+
+# Import infomap
+sys.path.append('../')
+from infomap import infomap
 
 
 # Source code meta data
@@ -87,7 +89,7 @@ def __run_infomap(input_file=None, options=None):
     """
     This function runs infomap algorithm
 
-    :param input_file: (string) input file path, default [.txt]
+    :param input_file: (str) A input file with accepted format from [www.mapequation.org]
     :return: (dict) python dictionary of nodes and communities
     """
     # Options for Infomap class
