@@ -20,14 +20,14 @@ Install the released version
 ============================
 Install the current release of ``neochain`` with ``pip``:
 
-.. code-block::
+.. code-block:: python
    :linenos:
 
    pip install neochain
 
 To upgrade to a newer version use the ``--upgrade`` flag:
 
-.. code-block::
+.. code-block:: python
    :linenos:
 
    pip install --upgrade neochain
@@ -35,7 +35,7 @@ To upgrade to a newer version use the ``--upgrade`` flag:
 If system wide installation is not possible for permission reasons, use ``--user`` flag to install ``neochain`` for current
 user
 
-.. code-block::
+.. code-block:: python
    :linenos:
 
    pip install --user neochain
@@ -45,16 +45,14 @@ Alternatively, ``neochain`` can be installed manually by downloading the current
 To install a downloaded versions, please unpack it in a preferred directory and run the following commands at the top
 level of the directory:
 
-.. code-block::
+.. code-block:: python
    :linenos:
 
    pip install .
 
 or run the following:
 
-.. code-block::
+.. code-block:: python
    :linenos:
 
    python setup install
-
-
