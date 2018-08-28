@@ -18,7 +18,6 @@ import pandas as pd
 import _operations
 
 # Import infomap
-sys.path.append('../')
 from infomap import infomap
 
 
