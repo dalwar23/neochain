@@ -39,7 +39,7 @@ with open(release_file, 'rb') as rf:
 
 # Read the README.md file for long description
 def readme():
-    with open('README.md') as f:
+    with open('README.rst') as f:
         return f.read()
 
 
