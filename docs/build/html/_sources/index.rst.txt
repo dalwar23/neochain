@@ -12,7 +12,6 @@ Welcome to neochain's documentation!
 
    overview
    install
-   modules
    tutorials
    examples
    bibliography
