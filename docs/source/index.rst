@@ -1,7 +1,7 @@
 Welcome to `NEOChain <https://www.neochain.readthedocs.io>`_
 ============================================================
 
-NEOChain (neochain) is a Network Evolution Observation library for Blockchain networks. This specially designed `python` library
+NEOChain (``neochain``) is a Network Evolution Observation library for Blockchain networks. This specially designed `python` library
 can provide tools to detect community structures in massive networks like **Blockchain** and also capable of merging one or
 more timed snapshot of transaction data into one large snapshot without losing any nodes to better understand the evolution of
 the network.
