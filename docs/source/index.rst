@@ -3,8 +3,13 @@
    You can adapt this file completely to your liking, but it should at least
    contain the root `toctree` directive.
 
-Welcome to neochain's documentation!
+Welcome to `NEOChain <http://www.neochain.readthedocs.io>`_
 ====================================
+
+NEOChain (neochain) is a Network Evolution Observation library for Blockchain networks. This specially designed python library
+can provide tools to detect community structures in massive networks like **Blockchain** and also capable of merging one or
+more timed snapshot of transaction data into one large snapshot without losing any nodes to better understand the evolution of
+the network. 
 
 .. toctree::
    :maxdepth: 2
