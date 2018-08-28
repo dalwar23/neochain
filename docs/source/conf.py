@@ -16,19 +16,25 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
-# -- Import project ----------------------------------------------------------
-from neochain import __version__, __release__, __author__, __email__
+# -- Import project release information --------------------------------------
+
+# Get version and release for this package
+package_name = '../../neochain/'
+release_file = os.path.join(package_name, '_release_info.py')
+release_info = {}
+with open(release_file, 'rb') as rf:
+    exec(rf.read(), release_info)
 
 # -- Project information -----------------------------------------------------
 
 project = u'NEOChain'
 copyright = u'2018, Dalwar Hossain'
-author = nc.__author__
+author = release_info['__author__']
 
 # The short X.Y version
-version = nc.__version__
+version = release_info['__version__']
 # The full version, including alpha/beta/rc tags
-release = nc.__release__
+release = release_info['__release__']
 
 
 # -- General configuration ---------------------------------------------------
@@ -99,12 +105,7 @@ html_theme_options = {
     'includehidden': True,
     'titles_only': False
 }
-# Custom configurations
-html_show_sourcelink = False
-html_show_sphinx = False
-add_module_names = False
-autodoc_mock_imports= ['infomap']
-autodoc_warningiserror = False
+
 # Add any paths that contain custom static files (such as style sheets) here,
 # relative to this directory. They are copied after the builtin static files,
 # so a file named "default.css" will overwrite the builtin "default.css".
@@ -179,3 +180,11 @@ texinfo_documents = [
 
 
 # -- Extension configuration -------------------------------------------------
+
+
+# -- Custom configurations ---------------------------------------------------
+
+html_show_sourcelink = False
+html_show_sphinx = False
+add_module_names = False
+autodoc_warningiserror = False
