@@ -79,7 +79,6 @@ if __name__ == "__main__":
                           'numpy!=1.15.0',
                           'pandas>=0.23.4',
                           'networkx>=2.1',
-                          'infomap>=1.0.0b14',
                           'python-louvain>=0.11',
                           'pyrainbowterm>=1.0',
                           'setuptools>=40.1.0',
