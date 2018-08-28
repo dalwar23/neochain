@@ -19,8 +19,8 @@ sys.path.insert(0, os.path.abspath('../..'))
 # -- Import project release information --------------------------------------
 
 # Get version and release for this package
-package_name = '../../neochain/'
-release_file = os.path.join(package_name, '_release_info.py')
+package_name = 'neochain'
+release_file = os.path.join('../..', package_name, '_release_info.py')
 release_info = {}
 with open(release_file, 'rb') as rf:
     exec(rf.read(), release_info)
