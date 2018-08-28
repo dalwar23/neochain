@@ -16,17 +16,19 @@ import os
 import sys
 sys.path.insert(0, os.path.abspath('../..'))
 
+# -- Import project ----------------------------------------------------------
+import neochain as nc
 
 # -- Project information -----------------------------------------------------
 
-project = u'neochain'
+project = u'NEOChain'
 copyright = u'2018, Dalwar Hossain'
-author = u'Dalwar Hossain'
+author = nc.__author__
 
 # The short X.Y version
-version = u'1.0'
+version = nc.__version__
 # The full version, including alpha/beta/rc tags
-release = u'1.0'
+release = nc.__release__
 
 
 # -- General configuration ---------------------------------------------------
