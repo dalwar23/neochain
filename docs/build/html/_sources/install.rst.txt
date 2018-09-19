@@ -17,18 +17,16 @@ If ``pip`` is not installed, please refer to the `Pip documentation <https://pip
 install ``pip`` first.
 
 Install the released version
-============================
+----------------------------
 Install the current release of ``neochain`` with ``pip``:
 
 .. code-block:: python
-   :linenos:
 
    pip install neochain
 
 To upgrade to a newer version use the ``--upgrade`` flag:
 
 .. code-block:: python
-   :linenos:
 
    pip install --upgrade neochain
 
@@ -36,7 +34,6 @@ If system wide installation is not possible for permission reasons, use ``--user
 user
 
 .. code-block:: python
-   :linenos:
 
    pip install --user neochain
 
@@ -46,13 +43,11 @@ To install a downloaded versions, please unpack it in a preferred directory and 
 level of the directory:
 
 .. code-block:: python
-   :linenos:
 
    pip install .
 
 or run the following:
 
 .. code-block:: python
-   :linenos:
 
    python setup install

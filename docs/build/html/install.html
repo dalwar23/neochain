@@ -84,11 +84,13 @@
             
               <p class="caption"><span class="caption-text">Contents:</span></p>
 <ul class="current">
-<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a></li>
-<li class="toctree-l1"><a class="reference internal" href="#install-the-released-version">Install the released version</a></li>
+<li class="toctree-l1 current"><a class="current reference internal" href="#">Install</a><ul>
+<li class="toctree-l2"><a class="reference internal" href="#install-the-released-version">Install the released version</a></li>
+</ul>
+</li>
 <li class="toctree-l1"><a class="reference internal" href="tutorials.html">Tutorials</a></li>
 <li class="toctree-l1"><a class="reference internal" href="examples.html">Examples</a></li>
-<li class="toctree-l1"><a class="reference internal" href="bibliography.html">Bibliography</a></li>
+<li class="toctree-l1"><a class="reference internal" href="changelog.html">Changelog</a></li>
 </ul>
 
             
@@ -167,33 +169,33 @@ of it. To create and work with Python virtual environments, please follow instru
 <p>To start the installation process, please make sure the latest version of <code class="docutils literal notranslate"><span class="pre">pip</span></code> (Python package manager) is installed.
 If <code class="docutils literal notranslate"><span class="pre">pip</span></code> is not installed, please refer to the <a class="reference external" href="https://pip.pypa.io/en/stable/installing/">Pip documentation</a> and
 install <code class="docutils literal notranslate"><span class="pre">pip</span></code> first.</p>
-</div>
 <div class="section" id="install-the-released-version">
-<h1>Install the released version<a class="headerlink" href="#install-the-released-version" title="Permalink to this headline">¶</a></h1>
+<h2>Install the released version<a class="headerlink" href="#install-the-released-version" title="Permalink to this headline">¶</a></h2>
 <p>Install the current release of <code class="docutils literal notranslate"><span class="pre">neochain</span></code> with <code class="docutils literal notranslate"><span class="pre">pip</span></code>:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">neochain</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="n">neochain</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>To upgrade to a newer version use the <code class="docutils literal notranslate"><span class="pre">--upgrade</span></code> flag:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">neochain</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">upgrade</span> <span class="n">neochain</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>If system wide installation is not possible for permission reasons, use <code class="docutils literal notranslate"><span class="pre">--user</span></code> flag to install <code class="docutils literal notranslate"><span class="pre">neochain</span></code> for current
 user</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="n">neochain</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">--</span><span class="n">user</span> <span class="n">neochain</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>Alternatively, <code class="docutils literal notranslate"><span class="pre">neochain</span></code> can be installed manually by downloading the current version from
 <a class="reference external" href="https://github.com/dharif23/neochain">GitHub</a> or <a class="reference external" href="https://pypi.org/project/neochain/">PyPI</a>.
 To install a downloaded versions, please unpack it in a preferred directory and run the following commands at the top
 level of the directory:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">pip</span> <span class="n">install</span> <span class="o">.</span>
 </pre></div>
-</td></tr></table></div>
+</div>
 <p>or run the following:</p>
-<div class="highlight-python notranslate"><table class="highlighttable"><tr><td class="linenos"><div class="linenodiv"><pre>1</pre></div></td><td class="code"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span> <span class="n">install</span>
+<div class="highlight-python notranslate"><div class="highlight"><pre><span></span><span class="n">python</span> <span class="n">setup</span> <span class="n">install</span>
 </pre></div>
-</td></tr></table></div>
+</div>
+</div>
 </div>
 
 

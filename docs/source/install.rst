@@ -17,7 +17,7 @@ If ``pip`` is not installed, please refer to the `Pip documentation <https://pip
 install ``pip`` first.
 
 Install the released version
-============================
+----------------------------
 Install the current release of ``neochain`` with ``pip``:
 
 .. code-block:: python
