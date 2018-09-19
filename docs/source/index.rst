@@ -32,6 +32,5 @@ license. Issues and Bugs can be reported on `GitHub <https://github.com/dharif23
 
    install
    tutorials
-   examples
    changelog
 
