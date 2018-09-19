@@ -109,3 +109,15 @@ Execution result of the above source code segment might look like following:
 
 First tuple of this output list represents that community ``1`` from time-stamp ``t`` is similar to community ``2`` from
 time-stamp ``t+1``.
+
+.. note::
+   This framework uses ``jaccard similarity`` measure by default. Other similarity measures like ``cosine similarity``,
+   ``euclidean distance similarity``, ``manhattan distance similarity`` and ``minkowski distance similarity`` can also
+   be used simply by invoking appropriate similarity measure.
+
+Preferred similarity measures can be invoked by defining ``similarity_measure`` keyword in the argument list. Available
+keywords are: ``jaccard``, ``cosine``, ``euclidean``, ``manhattan`` and ``minkowski``.
+
+.. code-block:: python
+      similarity = nc.find_relative_overlap(top_n_communities_t, top_n_communities_t1, similarity_measure='cosine')
+
