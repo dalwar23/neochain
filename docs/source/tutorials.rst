@@ -122,3 +122,33 @@ keywords are: ``jaccard``, ``cosine``, ``euclidean``, ``manhattan`` and ``minkow
 
    similarity = nc.find_relative_overlap(top_n_communities_t, top_n_communities_t1, similarity_measure='cosine')
 
+Accepted argument list
+----------------------
+To find out accepted argument list and help about a specific function please use ``dir`` and ``help``
+
+.. code-block:: python
+
+   import neochain as nc
+   dir(nc)
+
+This should output available functions and attributes available in ``neochain``.
+
+To see the help ``docstring`` or the list of accepted arguments, use ``help``
+
+.. code-block:: python
+
+   help(nc.find_relative_overlap)
+
+This code snippet should produce an output similar to the one below:
+
+.. code-block:: python
+
+   Help on function find_relative_overlap in module neochain.nc_community_handler:
+
+   find_relative_overlap(communities_t=None, communities_t1=None, similarity_measure=None)
+    This function calculates relative overlap of communities
+
+    :param communities_t: (python dict) Top 'n' communities at time 't'
+    :param communities_t1: (python dict) Top 'n' communities at time 't+1'
+    :param similarity_measure: Similarity measure to use.
+    :return: (python list) list of similar pairs of community id with similarity
