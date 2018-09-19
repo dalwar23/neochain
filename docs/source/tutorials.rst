@@ -12,14 +12,16 @@ NEOChain is designed to detect communities in large-scale transaction-based netw
 - Generate sub-graphs form top ``n`` communities at time-stamp ``t``
 - Merge sub-graph from time-stamp ``t`` with the graph from time-stamp ``t+1``
 - Find top ``n`` communities from merged graph
-- Find maximum overlapping communities from time-stamp ``t`` and ``t+1``
+- Find maximum overlapping communities (similar community structures) from time-stamp ``t`` and ``t+1``
+
+To read more about the architecture, please visit this [`Website <http://www.user.tu-berlin.de/hossainarif/>`_]
 
 .. warning::
    This is a prototypical framework for detecting and observing community structures in blockchain networks. Built as a
    part of an academic project. Source code of the framework might contain bugs!
 
-Test ``neochain``
------------------
+Test neochain installation
+--------------------------
 Test if ``neochain`` is properly installed or not
 
 .. code-block:: python
@@ -27,7 +29,7 @@ Test if ``neochain`` is properly installed or not
    import neochain as nc
    nc.__version__
 
-This should give an output with the version of the currently installed ``neochain`` package
+This should give an output with the version of the currently installed ``neochain`` package. Something similar like:
 
 .. code-block:: python
 
@@ -66,5 +68,44 @@ For time-stamp ``t+1``
 .. note::
    The number (integer) of top ``n`` communities MUST be the same in both the time-stamps, that are in the context.
 
+Creating merged graph
+---------------------
+A merged graph at time-stamp ``t+1`` from a sub-graph from time-stamp ``t`` and a graph from time-stamp ``t+1`` can be
+obtained with the help of ``generate_merged_graph`` function.
+
+.. code-block:: python
+
+   merged_graph = nc.generate_merged_graph(input_dataset_t=dataset_t, input_dataset_t1=dataset_t1, weighted='yes', top_n_communities=top_n_communities_t.values())
+
+.. note::
+   Here ``input_data_set_t`` represents the entire data-set at time-stamp ``t`` and likewise ``input_data_set_t1``
+   represents the entire data-set from timestamp ``t+1``. Creating sub-graph from top ``n`` communities is handled
+   internally by this function.
+
 Creating sub-graph
 ------------------
+Although creating a sub-graph and merging with another graph can be done with ``generate_merged_graph`` function, creating
+a sub-graph from top ``n`` communities at any given time-stamp is also possible.
+
+.. code-block:: python
+
+   sub_graph_df = nc.find_sub_graph(input_file=dataset_t, weighted='yes', top_n_communities_t=top_n_communities_t.values())
+
+Find maximum overlap
+--------------------
+Overlapping communities tends to be similar to each other. Maximum overlap can be measured between two community structures
+by measuring the similarity.
+
+.. code-block:: python
+
+   similarity = nc.find_relative_overlap(top_n_communities_t, top_n_communities_t1)
+
+``find_relative_overlap`` will return a list of most similar pairs of communities with the value of similarity measure.
+Execution result of the above source code segment might look like following:
+
+.. code-block:: python
+
+   [(1, 2, 0.7267641315247797), (2, 3, 0.35002051702913417)]
+
+First tuple of this output list represents that community ``1`` from time-stamp ``t`` is similar to community ``2`` from
+time-stamp ``t+1``.
