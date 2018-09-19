@@ -119,5 +119,6 @@ Preferred similarity measures can be invoked by defining ``similarity_measure`` 
 keywords are: ``jaccard``, ``cosine``, ``euclidean``, ``manhattan`` and ``minkowski``.
 
 .. code-block:: python
-      similarity = nc.find_relative_overlap(top_n_communities_t, top_n_communities_t1, similarity_measure='cosine')
+
+   similarity = nc.find_relative_overlap(top_n_communities_t, top_n_communities_t1, similarity_measure='cosine')
 
