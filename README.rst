@@ -2,13 +2,13 @@ neochain
 ========
 Network Evolution Observation for Blockchain
 
-.. image:: https://badge.fury.io/py/neochain.svg
-    :alt: pypi version
-    :target: https://badge.fury.io/py/neochain
-
 .. image:: https://img.shields.io/packagist/l/doctrine/orm.svg
     :alt: license
     :target: https://opensource.org/licenses/MIT
+
+.. image:: https://badge.fury.io/py/neochain.svg
+    :alt: pypi version
+    :target: https://badge.fury.io/py/neochain
 
 .. image:: https://travis-ci.org/dharif23/neochain.svg?branch=master
     :alt: Build Status
