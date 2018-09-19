@@ -26,13 +26,6 @@ This specially designed python library can provide tools to detect community str
 and also capable of merging one or more timed snapshot of transaction data into one large snapshot without losing any nodes to
 better understand the evolution of the network.
 
-Getting Started
-===============
-.. code-block:: python
-
-   python setup.py install
-
-
 Documentation
 =============
 For more details please see: `NEOChain Documentation <http://neochain.readthedocs.io/>`_
